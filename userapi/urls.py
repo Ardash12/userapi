@@ -5,7 +5,7 @@ from .views import UserGetApi, UserRegisterApi, UserLoginApi
 
 
 urlpatterns = [
-    path('user/', UserGetApi.as_view()),
-    path('auth/register/', UserRegisterApi.as_view()),
-    path('auth/login/', UserLoginApi.as_view()),
+    path('v1/user/', UserGetApi.as_view()),
+    path('v1/auth/register/', UserRegisterApi.as_view()),
+    path('v1/auth/login/', UserLoginApi.as_view()),
 ]

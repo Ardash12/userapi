@@ -3,9 +3,9 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    '''Поменять blank='''
-    name = models.CharField(max_length=64, blank=True)
+    
+    name = models.CharField(max_length=64, blank=False)
     birth = models.DateField(blank=False)
-    phone = models.CharField(max_length=12, blank=True)
-    tg = models.CharField(max_length=64, blank=True)
+    phone = models.CharField(max_length=12, blank=False)
+    tg = models.CharField(max_length=64, blank=False)
 
