@@ -1,20 +1,32 @@
-from rest_framework import serializers
+from dataclasses import field
+from rest_framework.serializers import ModelSerializer, HyperlinkedModelSerializer
+
 from .models import User
 
 
-# class UserGetSerializer(serializers.Serializer):
-#     class Meta:
-#         model = User
-#         fields = [
-#             'phone',
-#             'username',
-#             'name',
-#             'birth',
-#             'email',
-#             'tg',
-#         ]
+class UserGetSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            'phone',
+            'username',
+            'name',
+            'birth',
+            'email',
+            'tg',
+        ]
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class UserLoginSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'password',
+        ]
+
+
+class UserRegisterSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = [

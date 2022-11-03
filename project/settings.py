@@ -40,10 +40,17 @@ INSTALLED_APPS = [
 
     'userapi',
     'rest_framework',
-
+    "drf_standardized_errors",
 ]
 
 SITE_ID = 1
+
+REST_FRAMEWORK = {
+    
+    "EXCEPTION_HANDLER": "drf_standardized_errors.handler.exception_handler",
+}
+
+DRF_STANDARDIZED_ERRORS = {"ENABLE_IN_DEBUG_FOR_UNHANDLED_EXCEPTIONS":  True}
 
 ROOT_URLCONF = 'project.urls'
 
